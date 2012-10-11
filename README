@@ -1,0 +1,4 @@
+snakenest
+Snake nest is an ASP (answer set program) answer set parser written in Python.
+It's not terribly efficient, but until it needs to be that probably won't
+change. Currently it's specialized for the output of clasp (Potassco Labs).
