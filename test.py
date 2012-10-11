@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import subprocess
 
-import snakenest
+import parse
 
 subprocess.call(
   ["clingo", "example.lp", "-n", "3"],
@@ -10,9 +10,9 @@ subprocess.call(
 
 with open("out.as") as fin:
   raw = fin.read()
-answers = snakenest.parse_raw(raw)
+answers = parse.parse_raw(raw)
 #import cProfile
-#cProfile.run('snakenest.parse_raw(raw)')
+#cProfile.run('parse.parse_raw(raw)')
 
 if len(answers) == 3\
 and len(answers[0]) == 1342\
@@ -22,7 +22,7 @@ and len(answers[2]) == 1342:
 else:
   print("Parsing test: failed")
 
-reparsed = snakenest.parse_set(str(answers[0]))
+reparsed = parse.parse_set(str(answers[0]))
 
 if reparsed == answers[0]:
   print("Reparsing test: passed")
